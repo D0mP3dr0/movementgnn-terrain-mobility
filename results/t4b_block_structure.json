@@ -1,0 +1,26 @@
+{
+ "data": "2026-07-12",
+ "fronteiras_verticais": {
+  "n": 20,
+  "espacamentos_celulas": [
+   162,
+   163
+  ]
+ },
+ "fronteiras_horizontais": {
+  "n": 22,
+  "espacamentos_celulas": [
+   162,
+   163
+  ],
+  "offset_primeira_banda_linhas": 30
+ },
+ "tamanho_bloco": "162-163 celulas x 30 m = 4.86-4.89 km (~5 km em grade de graus)",
+ "n_blocos": 483,
+ "pureza": 1.0,
+ "blocos_por_particao": {
+  "train": 338,
+  "val": 72,
+  "test": 73
+ }
+}

@@ -1,0 +1,21 @@
+# Curadoria deliberada: pesos finais (models/*.pt), indices (data/*.npz), suplementar
+# (zip/pdf) e manifests SAO versionados por exigencia de reprodutibilidade.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+.ipynb_checkpoints/
+*.log
+wandb/
+runs/
+checkpoints/
+*.ckpt
+# grafos e rasters brutos (obtidos via scripts/data/ — nao redistribuidos)
+*_ready.pt
+*_fixed.pt
+*.tif
+*.tiff
+!supplementary/*.zip

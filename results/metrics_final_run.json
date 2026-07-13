@@ -1,0 +1,489 @@
+{
+  "a_pe": {
+    "accuracy": 0.9617,
+    "f1_macro": 0.9353,
+    "confusion_matrix": [
+      [
+        7238489,
+        164922,
+        58
+      ],
+      [
+        19680,
+        1463667,
+        96722
+      ],
+      [
+        2725,
+        178132,
+        2903297
+      ]
+    ],
+    "n_valid": 12067692
+  },
+  "motorizada": {
+    "accuracy": 0.946,
+    "f1_macro": 0.9305,
+    "confusion_matrix": [
+      [
+        5013666,
+        414409,
+        7
+      ],
+      [
+        25713,
+        1949473,
+        6472
+      ],
+      [
+        2002,
+        203653,
+        4452297
+      ]
+    ],
+    "n_valid": 12067692
+  },
+  "mecanizada": {
+    "accuracy": 0.958,
+    "f1_macro": 0.9232,
+    "confusion_matrix": [
+      [
+        6221941,
+        320619,
+        1
+      ],
+      [
+        19654,
+        1116961,
+        11868
+      ],
+      [
+        2175,
+        152855,
+        4221618
+      ]
+    ],
+    "n_valid": 12067692
+  },
+  "blindada": {
+    "accuracy": 0.9438,
+    "f1_macro": 0.9234,
+    "confusion_matrix": [
+      [
+        5029681,
+        396931,
+        1
+      ],
+      [
+        27507,
+        1741906,
+        3318
+      ],
+      [
+        2303,
+        247687,
+        4618358
+      ]
+    ],
+    "n_valid": 12067692
+  },
+  "config": {
+    "version": "v2_blindada_fix",
+    "changes": "resume from ep83, corrected y_blindada labels, fine-tune LR",
+    "base_checkpoint": "F:\\arpia_topo_refinado\\TOPO_RESTRICAO_MOVIMENTO\\colab\\results\\results_v2_local\\checkpoints\\checkpoint_best.pt",
+    "base_epoch": 83,
+    "batch_size": 750000,
+    "k_neighbors": 8,
+    "num_layers": 3,
+    "hidden_dim": 64,
+    "heads": 4,
+    "dropout": 0.1,
+    "lr": 5e-05,
+    "max_norm": 1.0,
+    "extra_epochs": 25,
+    "in_channels": 271,
+    "edge_dim": 2,
+    "n_params": 52364,
+    "graph": "F:\\arpia_topo_refinado\\TOPO_RESTRICAO_MOVIMENTO\\GNN_RESTRICAO_MOVIMENTO\\graph_data\\pacaraima_q1q4_ready.pt",
+    "embeddings": "F:\\arpia_topo_refinado\\TOPO_RESTRICAO_MOVIMENTO\\GNN_RESTRICAO_MOVIMENTO\\graph_data\\pacaraima_q1q4_embeddings_256.pt",
+    "class_weights": {
+      "a_pe": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "motorizada": [
+        1.0,
+        5.0,
+        1.0
+      ],
+      "mecanizada": [
+        1.0,
+        4.5,
+        1.0
+      ],
+      "blindada": [
+        1.0,
+        5.0,
+        1.0
+      ]
+    },
+    "removed_features": [
+      "has_lidar",
+      "z_lidar"
+    ],
+    "fix_description": "y_blindada was identical to y_motorizada in ready.pt; corrected from fixed.pt (211865 pixels differ, 1.76%)"
+  },
+  "training_history": [
+    {
+      "epoch": 84,
+      "epoch_idx": 1,
+      "train_loss": 0.61562,
+      "val_loss": 0.56815,
+      "val_acc": 0.9447,
+      "lr": 4.9806810182204715e-05,
+      "elapsed_s": 921.4,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9305,
+      "f1_motorizada": 0.9217,
+      "f1_mecanizada": 0.9136,
+      "f1_blindada": 0.9063
+    },
+    {
+      "epoch": 85,
+      "epoch_idx": 2,
+      "train_loss": 0.60542,
+      "val_loss": 0.55339,
+      "val_acc": 0.9447,
+      "lr": 4.9230287447651464e-05,
+      "elapsed_s": 1030.8,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9293,
+      "f1_motorizada": 0.9206,
+      "f1_mecanizada": 0.9124,
+      "f1_blindada": 0.9097
+    },
+    {
+      "epoch": 86,
+      "epoch_idx": 3,
+      "train_loss": 0.59815,
+      "val_loss": 0.54617,
+      "val_acc": 0.9459,
+      "lr": 4.827952390426216e-05,
+      "elapsed_s": 1262.8,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9312,
+      "f1_motorizada": 0.9209,
+      "f1_mecanizada": 0.9141,
+      "f1_blindada": 0.9123
+    },
+    {
+      "epoch": 87,
+      "epoch_idx": 4,
+      "train_loss": 0.59315,
+      "val_loss": 0.54099,
+      "val_acc": 0.9458,
+      "lr": 4.696951366107466e-05,
+      "elapsed_s": 2999.8,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9309,
+      "f1_motorizada": 0.9207,
+      "f1_mecanizada": 0.914,
+      "f1_blindada": 0.9125
+    },
+    {
+      "epoch": 88,
+      "epoch_idx": 5,
+      "train_loss": 0.58894,
+      "val_loss": 0.53865,
+      "val_acc": 0.9472,
+      "lr": 4.532091636218621e-05,
+      "elapsed_s": 1688.8,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9321,
+      "f1_motorizada": 0.9228,
+      "f1_mecanizada": 0.9157,
+      "f1_blindada": 0.9144
+    },
+    {
+      "epoch": 89,
+      "epoch_idx": 6,
+      "train_loss": 0.58467,
+      "val_loss": 0.53038,
+      "val_acc": 0.9468,
+      "lr": 4.335973137182458e-05,
+      "elapsed_s": 2251.8,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9299,
+      "f1_motorizada": 0.9227,
+      "f1_mecanizada": 0.9153,
+      "f1_blindada": 0.9149
+    },
+    {
+      "epoch": 90,
+      "epoch_idx": 7,
+      "train_loss": 0.58062,
+      "val_loss": 0.53183,
+      "val_acc": 0.9481,
+      "lr": 4.111688774884289e-05,
+      "elapsed_s": 922.3,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9333,
+      "f1_motorizada": 0.9241,
+      "f1_mecanizada": 0.9168,
+      "f1_blindada": 0.9158
+    },
+    {
+      "epoch": 91,
+      "epoch_idx": 8,
+      "train_loss": 0.57731,
+      "val_loss": 0.52401,
+      "val_acc": 0.9477,
+      "lr": 3.862775647698541e-05,
+      "elapsed_s": 1072.7,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9319,
+      "f1_motorizada": 0.9235,
+      "f1_mecanizada": 0.9165,
+      "f1_blindada": 0.9163
+    },
+    {
+      "epoch": 92,
+      "epoch_idx": 9,
+      "train_loss": 0.57416,
+      "val_loss": 0.52539,
+      "val_acc": 0.9491,
+      "lr": 3.5931592643344276e-05,
+      "elapsed_s": 1013.2,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9335,
+      "f1_motorizada": 0.9256,
+      "f1_mecanizada": 0.9179,
+      "f1_blindada": 0.918
+    },
+    {
+      "epoch": 93,
+      "epoch_idx": 10,
+      "train_loss": 0.57121,
+      "val_loss": 0.52006,
+      "val_acc": 0.949,
+      "lr": 3.3070916362186205e-05,
+      "elapsed_s": 1060.7,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9335,
+      "f1_motorizada": 0.9255,
+      "f1_mecanizada": 0.918,
+      "f1_blindada": 0.918
+    },
+    {
+      "epoch": 94,
+      "epoch_idx": 11,
+      "train_loss": 0.56825,
+      "val_loss": 0.51879,
+      "val_acc": 0.9499,
+      "lr": 3.0090842207350255e-05,
+      "elapsed_s": 1033.9,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9342,
+      "f1_motorizada": 0.9267,
+      "f1_mecanizada": 0.9197,
+      "f1_blindada": 0.919
+    },
+    {
+      "epoch": 95,
+      "epoch_idx": 12,
+      "train_loss": 0.5658,
+      "val_loss": 0.51628,
+      "val_acc": 0.9505,
+      "lr": 2.703836772846818e-05,
+      "elapsed_s": 1274.6,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9341,
+      "f1_motorizada": 0.9279,
+      "f1_mecanizada": 0.9203,
+      "f1_blindada": 0.9204
+    },
+    {
+      "epoch": 96,
+      "epoch_idx": 13,
+      "train_loss": 0.56322,
+      "val_loss": 0.51448,
+      "val_acc": 0.9508,
+      "lr": 2.3961632271531826e-05,
+      "elapsed_s": 1230.5,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9346,
+      "f1_motorizada": 0.9281,
+      "f1_mecanizada": 0.921,
+      "f1_blindada": 0.9206
+    },
+    {
+      "epoch": 97,
+      "epoch_idx": 14,
+      "train_loss": 0.56188,
+      "val_loss": 0.51296,
+      "val_acc": 0.9509,
+      "lr": 2.090915779264975e-05,
+      "elapsed_s": 1310.3,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9344,
+      "f1_motorizada": 0.9286,
+      "f1_mecanizada": 0.9205,
+      "f1_blindada": 0.9213
+    },
+    {
+      "epoch": 98,
+      "epoch_idx": 15,
+      "train_loss": 0.55953,
+      "val_loss": 0.51086,
+      "val_acc": 0.9513,
+      "lr": 1.7929083637813798e-05,
+      "elapsed_s": 1265.6,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9349,
+      "f1_motorizada": 0.9289,
+      "f1_mecanizada": 0.9214,
+      "f1_blindada": 0.9218
+    },
+    {
+      "epoch": 99,
+      "epoch_idx": 16,
+      "train_loss": 0.5584,
+      "val_loss": 0.50983,
+      "val_acc": 0.9514,
+      "lr": 1.5068407356655722e-05,
+      "elapsed_s": 1171.4,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9353,
+      "f1_motorizada": 0.9289,
+      "f1_mecanizada": 0.9216,
+      "f1_blindada": 0.9217
+    },
+    {
+      "epoch": 100,
+      "epoch_idx": 17,
+      "train_loss": 0.55707,
+      "val_loss": 0.50926,
+      "val_acc": 0.9519,
+      "lr": 1.2372243523014577e-05,
+      "elapsed_s": 1322.3,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9354,
+      "f1_motorizada": 0.9296,
+      "f1_mecanizada": 0.9224,
+      "f1_blindada": 0.9224
+    },
+    {
+      "epoch": 101,
+      "epoch_idx": 18,
+      "train_loss": 0.55492,
+      "val_loss": 0.50515,
+      "val_acc": 0.9518,
+      "lr": 9.883112251157102e-06,
+      "elapsed_s": 1112.1,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9344,
+      "f1_motorizada": 0.9299,
+      "f1_mecanizada": 0.9224,
+      "f1_blindada": 0.9229
+    },
+    {
+      "epoch": 102,
+      "epoch_idx": 19,
+      "train_loss": 0.55495,
+      "val_loss": 0.50636,
+      "val_acc": 0.9521,
+      "lr": 7.640268628175424e-06,
+      "elapsed_s": 1349.8,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9355,
+      "f1_motorizada": 0.9301,
+      "f1_mecanizada": 0.9225,
+      "f1_blindada": 0.9228
+    },
+    {
+      "epoch": 103,
+      "epoch_idx": 20,
+      "train_loss": 0.55328,
+      "val_loss": 0.50507,
+      "val_acc": 0.9521,
+      "lr": 5.679083637813791e-06,
+      "elapsed_s": 1096.9,
+      "nan_batches": 0,
+      "f1_a_pe": 0.935,
+      "f1_motorizada": 0.9302,
+      "f1_mecanizada": 0.9227,
+      "f1_blindada": 0.9231
+    },
+    {
+      "epoch": 104,
+      "epoch_idx": 21,
+      "train_loss": 0.55326,
+      "val_loss": 0.50503,
+      "val_acc": 0.9526,
+      "lr": 4.030486338925344e-06,
+      "elapsed_s": 987.6,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9354,
+      "f1_motorizada": 0.9309,
+      "f1_mecanizada": 0.9235,
+      "f1_blindada": 0.9238
+    },
+    {
+      "epoch": 105,
+      "epoch_idx": 22,
+      "train_loss": 0.5527,
+      "val_loss": 0.50412,
+      "val_acc": 0.9524,
+      "lr": 2.7204760957378426e-06,
+      "elapsed_s": 1034.5,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9353,
+      "f1_motorizada": 0.9305,
+      "f1_mecanizada": 0.9232,
+      "f1_blindada": 0.9233
+    },
+    {
+      "epoch": 106,
+      "epoch_idx": 23,
+      "train_loss": 0.55223,
+      "val_loss": 0.50439,
+      "val_acc": 0.9525,
+      "lr": 1.7697125523485415e-06,
+      "elapsed_s": 938.7,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9352,
+      "f1_motorizada": 0.9309,
+      "f1_mecanizada": 0.9233,
+      "f1_blindada": 0.9237
+    },
+    {
+      "epoch": 107,
+      "epoch_idx": 24,
+      "train_loss": 0.55233,
+      "val_loss": 0.50379,
+      "val_acc": 0.9524,
+      "lr": 1.1931898177952948e-06,
+      "elapsed_s": 1428.5,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9353,
+      "f1_motorizada": 0.9305,
+      "f1_mecanizada": 0.9232,
+      "f1_blindada": 0.9234
+    },
+    {
+      "epoch": 108,
+      "epoch_idx": 25,
+      "train_loss": 0.55217,
+      "val_loss": 0.5043,
+      "val_acc": 0.9525,
+      "lr": 1e-06,
+      "elapsed_s": 1306.4,
+      "nan_batches": 0,
+      "f1_a_pe": 0.9355,
+      "f1_motorizada": 0.9308,
+      "f1_mecanizada": 0.9233,
+      "f1_blindada": 0.9236
+    }
+  ]
+}

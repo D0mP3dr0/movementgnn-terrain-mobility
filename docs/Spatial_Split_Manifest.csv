@@ -1,0 +1,37 @@
+campo,valor,fonte
+total_dem_nodes,12067692,medido (mascaras do grafo)
+train_nodes,8454917,medido
+val_nodes,1847936,medido
+test_nodes,1764839,medido
+train_fraction,0.700624,medido (70.06%)
+val_fraction,0.153131,medido (15.31%)
+test_fraction,0.146245,medido (14.62%)
+mascaras_disjuntas,SIM (0 sobreposicoes),medido
+nos_fora_de_particao_buffer,0 (sem buffer),medido
+tamanho_blocos,162-163 celulas = 4.86-4.89 km (~5 km),medido (fronteiras das mascaras)
+numero_blocos,483,medido
+pureza_blocos,100% (todo bloco pertence a uma unica particao),medido
+blocos_por_particao,train 338 / val 72 / test 73,medido
+regra_selecao_blocos,shuffle e fatiamento de blocos,"spatial_splitter.py:143-157"
+seed,42,"spatial_splitter.py:76,98"
+arestas_train_val,183702,medido — arestas mantidas
+arestas_train_test,182260,medido — arestas mantidas
+arestas_val_test,38836,medido — arestas mantidas
+tratamento_arestas_entre_particoes,mantidas no grafo; message passing pode cruzar fronteiras na banda limitrofe (0.37% das arestas dem-dem),medido
+indices_dos_nos,"entregaveis/split_indices.npz (train_idx, val_idx, test_idx, int32)",item 3.5
+figura_mapa,entregaveis/fig_spatial_split_map.png,item 3.5
+grafo_fonte,GNN_RESTRICAO_MOVIMENTO/graph_data/pacaraima_q1q4_ready.pt (SHA256 BE189F0571671BF413E1335D6B166828560005FA5C3F60A69F5B936A346F3393),HASHES_SHA256.txt
+
+particao,perfil,Go,SlowGo,NoGo,n_total_particao
+train,a_pe,5328997,1101204,2024716,8454917
+train,motorizada,3918958,1414440,3121519,8454917
+train,mecanizada,4716576,813103,2925238,8454917
+train,blindada,3917882,1266865,3270170,8454917
+val,a_pe,1023062,235018,589856,1847936
+val,motorizada,737147,287015,823774,1847936
+val,mecanizada,900022,164815,783099,1847936
+val,blindada,736931,257975,853030,1847936
+test,a_pe,1051410,243847,469582,1764839
+test,motorizada,771977,280203,712659,1764839
+test,mecanizada,925963,170565,668311,1764839
+test,blindada,771800,247891,745148,1764839

@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MovementGNN terrain mobility classification software"
+version: 1.0.1-submission
+date-released: 2026-07-12
+license: MIT
+repository-code: "https://github.com/D0mP3dr0/movementgnn-terrain-mobility"
+doi: 10.5281/zenodo.21329214
+authors:
+  - family-names: Seelig
+    given-names: Luis Felipe Comodo
+    orcid: "https://orcid.org/0009-0000-6095-3864"
+  - family-names: Migon
+    given-names: Eduardo Xavier Ferreira Glaser
+    orcid: "https://orcid.org/0000-0002-8762-1701"
+  - family-names: Silva
+    given-names: Diego Moura de Oliveira
+    orcid: "https://orcid.org/0009-0002-1383-1113"
+  - family-names: Lima
+    given-names: Leonardo da Silva
+    orcid: "https://orcid.org/0009-0005-1809-7634"
+keywords:
+  - graph neural networks
+  - terrain analysis
+  - military mobility
+  - predictive entropy
+  - remote sensing
+notes: "Version DOI 10.5281/zenodo.21329214 (v1.0.1-submission); concept DOI (all versions) 10.5281/zenodo.21329213."

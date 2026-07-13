@@ -1,0 +1,86 @@
+# config_movementgnn_v2.yaml — configuracao consolidada do MovementGNN V2 (Pacaraima Q1Q4)
+# Gerado em 2026-07-12 a partir de colab/07_train_gnn_v2.py, 07b_retrain_blindada_fix.py e
+# results_v2_local_blindada_fix/metrics.json (versao congelada MovementGNN_JT_Submission_v1,
+# commit e00fa11d8919151a2674e731d4663c0ef4c5e69e). Nada inferido.
+
+model:
+  name: MovementGNN
+  tasks: [dismounted, motorised, mechanised, armoured]   # a_pe, motorizada, mecanizada, blindada
+  num_classes: 3            # Go=1, SlowGo=2, NoGo=3
+  in_channels: 271          # 15 features crus (17 - 2 LiDAR removidas) + 256 embeddings
+  removed_features: [has_lidar, z_lidar]   # indices 15-16 do tensor de 17
+  hidden_dim: 64
+  num_layers: 3             # GATv2Conv
+  heads: 4
+  edge_dim: 2               # [distancia, dz]
+  add_self_loops: true
+  dropout: 0.1
+  activation: leaky_relu_0.2
+  encoder: Linear(271,64) -> BatchNorm1d -> LeakyReLU(0.2) -> Dropout(0.1)
+  decoder_per_task: Linear(64,32) -> LeakyReLU(0.2) -> Dropout(0.1) -> Linear(32,3)
+  n_params: 52364
+  gradient_checkpointing: true
+
+loss:                        # nomenclatura decidida: rule-informed loss
+  weight_ce: 1.0
+  weight_phys: 0.5
+  supervised: focal          # (1-p)^gamma * CE
+  focal_gamma: 2.0
+  label_smoothing: 0.05
+  class_weights:             # [Go, SlowGo, NoGo] — variante conservadora
+    dismounted: [1.0, 3.0, 1.0]
+    motorised:  [1.0, 5.0, 1.0]
+    mechanised: [1.0, 4.5, 1.0]
+    armoured:   [1.0, 5.0, 1.0]
+  penalties:                 # aplicadas sobre p(Go) = softmax(logits)[:, 0]
+    slope:  "mean(p_Go * relu(slope_norm - 0.35))"
+    vegetation:
+      form: "mean(p_Go * relu(ndvi - tau))"
+      tau: {dismounted: 0.7, motorised: 0.5, mechanised: 0.6, armoured: 0.5}
+    water:  "mean(p_Go * 1[ndwi > 0.3 or water_mask > 0.5])"
+  multitask_weighting: homoscedastic   # exp(-s_t)*L_t + s_t; s_t aprendivel (init 0)
+
+training_local_v2:
+  optimizer: {name: AdamW, lr: 3.0e-4, weight_decay: 1.0e-5}
+  scheduler: {name: CosineAnnealingLR, T_max: 85, eta_min: 1.0e-6}
+  epochs: 85
+  early_stopping_patience: 15
+  best_epoch: 83
+  sampler: {name: NeighborLoader, batch_size: 750000, k_neighbors: 8}
+  grad_clip_max_norm: 1.0
+  amp: bfloat16
+  wall_time_s: 74411
+
+finetune_blindada_fix:       # produz os resultados finais
+  base_checkpoint: results_v2_local/checkpoints/checkpoint_best.pt (ep83)
+  lr: 5.0e-5
+  extra_epochs: 25           # epocas 84-108
+  best_checkpoint_date: "2026-05-24 03:26"
+
+run_colab_v1:                # dual reporting (baseline)
+  in_channels: 273
+  batch_size: 1050000
+  epochs: 85
+  gpu: A100
+  wall_time_s: 23208
+  macro_f1_mean: 0.9543
+  accuracy_mean: 0.9736
+
+runs:
+  independent_runs: "1 run Colab (273-d) + 1 run local (271-d) + 1 fine-tune"
+  seeds: "random seed 42 (spatial split and baselines); GNN training not bit-reproducible (no fixed torch seed)"
+
+environment:                 # T-6, capturado em 12/07/2026 do venv de treino (F:/S33_dslm/s33_amb_virtual/.venv)
+  python: 3.11.9
+  torch: 2.10.0+cu128
+  cuda: "12.8"
+  torch_geometric: 2.8.0.dev20260214 (pyg-nightly; pyg-lib 0.6.0.dev20260214+pt210cu128)
+  numpy: 2.4.6
+  pandas: 3.0.0
+  scikit_learn: 1.8.0
+  scipy: 1.17.0
+  rasterio: 1.4.4
+  full_freeze: requirements_training_env_freeze.txt   # 220 pacotes
+  nota: "freeze capturado em 2026-07-12; ultima execucao de treino em 2026-05-24"
+  gpu: NVIDIA GeForce RTX 5070 Ti 16 GB (driver 591.86)
+  ram_gb: 128

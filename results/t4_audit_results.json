@@ -1,0 +1,178 @@
+{
+ "graph_path": "GNN_RESTRICAO_MOVIMENTO/graph_data/pacaraima_q1q4_ready.pt",
+ "edges_path": "colab/analise_dados/edges.npz",
+ "dem_store_attrs": [
+  "grid_shape",
+  "labels_source",
+  "node_id",
+  "pos",
+  "test_mask",
+  "train_mask",
+  "val_mask",
+  "x",
+  "y",
+  "y_a_pe",
+  "y_blindada",
+  "y_mecanizada",
+  "y_motorizada"
+ ],
+ "n_dem_nodes": 12067692,
+ "masks_present": [
+  "test_mask",
+  "train_mask",
+  "val_mask"
+ ],
+ "mask_stats": {
+  "train_mask": {
+   "count": 8454917,
+   "fraction": 0.700624
+  },
+  "val_mask": {
+   "count": 1847936,
+   "fraction": 0.153131
+  },
+  "test_mask": {
+   "count": 1764839,
+   "fraction": 0.146245
+  },
+  "overlap_nodes": 0,
+  "unassigned_nodes(buffer?)": 0,
+  "unassigned_fraction": 0.0
+ },
+ "class_distribution_by_partition": {
+  "a_pe": {
+   "train": {
+    "Go": 5328997,
+    "SlowGo": 1101204,
+    "NoGo": 2024716
+   },
+   "val": {
+    "Go": 1023062,
+    "SlowGo": 235018,
+    "NoGo": 589856
+   },
+   "test": {
+    "Go": 1051410,
+    "SlowGo": 243847,
+    "NoGo": 469582
+   },
+   "unassigned": {}
+  },
+  "motorizada": {
+   "train": {
+    "Go": 3918958,
+    "SlowGo": 1414440,
+    "NoGo": 3121519
+   },
+   "val": {
+    "Go": 737147,
+    "SlowGo": 287015,
+    "NoGo": 823774
+   },
+   "test": {
+    "Go": 771977,
+    "SlowGo": 280203,
+    "NoGo": 712659
+   },
+   "unassigned": {}
+  },
+  "mecanizada": {
+   "train": {
+    "Go": 4716576,
+    "SlowGo": 813103,
+    "NoGo": 2925238
+   },
+   "val": {
+    "Go": 900022,
+    "SlowGo": 164815,
+    "NoGo": 783099
+   },
+   "test": {
+    "Go": 925963,
+    "SlowGo": 170565,
+    "NoGo": 668311
+   },
+   "unassigned": {}
+  },
+  "blindada": {
+   "train": {
+    "Go": 3917882,
+    "SlowGo": 1266865,
+    "NoGo": 3270170
+   },
+   "val": {
+    "Go": 736931,
+    "SlowGo": 257975,
+    "NoGo": 853030
+   },
+   "test": {
+    "Go": 771800,
+    "SlowGo": 247891,
+    "NoGo": 745148
+   },
+   "unassigned": {}
+  }
+ },
+ "pos_source": "attr pos do grafo",
+ "bbox": {
+  "lon_min": -61.61386489868164,
+  "lon_max": -60.68247604370117,
+  "lat_min": 3.976343870162964,
+  "lat_max": 4.975510597229004
+ },
+ "block_structure": {
+  "1.0km": {
+   "n_blocks_com_nos_atribuidos": 8880,
+   "blocos_puros": 7854,
+   "pureza": 0.8845,
+   "blocos_puros_por_particao": {
+    "train": 5748,
+    "val": 1068,
+    "test": 1038
+   }
+  },
+  "2.0km": {
+   "n_blocks_com_nos_atribuidos": 2240,
+   "blocos_puros": 1560,
+   "pureza": 0.6964,
+   "blocos_puros_por_particao": {
+    "train": 1240,
+    "val": 160,
+    "test": 160
+   }
+  },
+  "5.0km": {
+   "n_blocks_com_nos_atribuidos": 368,
+   "blocos_puros": 180,
+   "pureza": 0.4891,
+   "blocos_puros_por_particao": {
+    "train": 170,
+    "val": 7,
+    "test": 3
+   }
+  },
+  "10.0km": {
+   "n_blocks_com_nos_atribuidos": 96,
+   "blocos_puros": 10,
+   "pureza": 0.1042,
+   "blocos_puros_por_particao": {
+    "train": 10,
+    "val": 0,
+    "test": 0
+   }
+  }
+ },
+ "n_dem_dem_edges": 108567520,
+ "edges_by_partition_pair": {
+  "unassigned<->unassigned": 0,
+  "unassigned<->train": 0,
+  "unassigned<->val": 0,
+  "unassigned<->test": 0,
+  "train<->train": 75882957,
+  "train<->val": 183702,
+  "train<->test": 182260,
+  "val<->val": 16514320,
+  "val<->test": 38836,
+  "test<->test": 15765445
+ }
+}

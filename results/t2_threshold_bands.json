@@ -1,0 +1,120 @@
+{
+  "metodologia": "bandas |NDVI - tau| (far > 0.05; transition <= 0.05; core <= 0.02), macro-F1 sklearn; predicao = argmax(probs)+1; referencia = rule-based labels pos-fix",
+  "run": "results_v2_local_blindada_fix (checkpoint best 2026-05-24 03:26)",
+  "margens": {
+    "near": 0.05,
+    "close": 0.02
+  },
+  "tau_ndvi": {
+    "a_pe": 0.7,
+    "motorizada": 0.5,
+    "mecanizada": 0.6,
+    "blindada": 0.5
+  },
+  "perfis": {
+    "dismounted": {
+      "far_gt_0.05__test": {
+        "macro_f1": 0.948,
+        "n_nodes": 1695759
+      },
+      "far_gt_0.05__full_graph": {
+        "macro_f1": 0.9435,
+        "n_nodes": 11629520
+      },
+      "transition_le_0.05__test": {
+        "macro_f1": 0.4909,
+        "n_nodes": 69080
+      },
+      "transition_le_0.05__full_graph": {
+        "macro_f1": 0.5095,
+        "n_nodes": 438172
+      },
+      "core_le_0.02__test": {
+        "macro_f1": 0.3869,
+        "n_nodes": 26707
+      },
+      "core_le_0.02__full_graph": {
+        "macro_f1": 0.3953,
+        "n_nodes": 168748
+      }
+    },
+    "motorised": {
+      "far_gt_0.05__test": {
+        "macro_f1": 0.9416,
+        "n_nodes": 1638758
+      },
+      "far_gt_0.05__full_graph": {
+        "macro_f1": 0.9427,
+        "n_nodes": 11178138
+      },
+      "transition_le_0.05__test": {
+        "macro_f1": 0.6817,
+        "n_nodes": 126081
+      },
+      "transition_le_0.05__full_graph": {
+        "macro_f1": 0.6799,
+        "n_nodes": 889554
+      },
+      "core_le_0.02__test": {
+        "macro_f1": 0.5674,
+        "n_nodes": 50152
+      },
+      "core_le_0.02__full_graph": {
+        "macro_f1": 0.5669,
+        "n_nodes": 353951
+      }
+    },
+    "mechanised": {
+      "far_gt_0.05__test": {
+        "macro_f1": 0.9335,
+        "n_nodes": 1680509
+      },
+      "far_gt_0.05__full_graph": {
+        "macro_f1": 0.9338,
+        "n_nodes": 11477188
+      },
+      "transition_le_0.05__test": {
+        "macro_f1": 0.5858,
+        "n_nodes": 84330
+      },
+      "transition_le_0.05__full_graph": {
+        "macro_f1": 0.6036,
+        "n_nodes": 590504
+      },
+      "core_le_0.02__test": {
+        "macro_f1": 0.4666,
+        "n_nodes": 33258
+      },
+      "core_le_0.02__full_graph": {
+        "macro_f1": 0.4811,
+        "n_nodes": 232344
+      }
+    },
+    "armoured": {
+      "far_gt_0.05__test": {
+        "macro_f1": 0.9308,
+        "n_nodes": 1638758
+      },
+      "far_gt_0.05__full_graph": {
+        "macro_f1": 0.9325,
+        "n_nodes": 11178138
+      },
+      "transition_le_0.05__test": {
+        "macro_f1": 0.7046,
+        "n_nodes": 126081
+      },
+      "transition_le_0.05__full_graph": {
+        "macro_f1": 0.7044,
+        "n_nodes": 889554
+      },
+      "core_le_0.02__test": {
+        "macro_f1": 0.5923,
+        "n_nodes": 50152
+      },
+      "core_le_0.02__full_graph": {
+        "macro_f1": 0.5947,
+        "n_nodes": 353951
+      }
+    }
+  }
+}

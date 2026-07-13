@@ -1,0 +1,50 @@
+{
+  "protocolo": "rebuild temporario, medido e deletado (T-12)",
+  "entradas": {
+    "dem": "F:\\arpia_topo_refinado\\TOPO_RESTRICAO_MOVIMENTO\\GNN_RESTRICAO_MOVIMENTO\\data_raw\\satelites_raw\\dem\\pacaraima_dem_consolidated_q1q4.tif",
+    "sentinel2": "F:\\arpia_topo_refinado\\TOPO_RESTRICAO_MOVIMENTO\\GNN_RESTRICAO_MOVIMENTO\\data_raw\\satelites_raw\\sentinel2\\pacaraima\\pacaraima_s2_10m_real_q1q4.tif"
+  },
+  "script_construtor": "F:\\arpia_topo_refinado\\TOPO_RESTRICAO_MOVIMENTO\\colab_geoint_restricao_mov\\2-data_processed\\generate_graph.py",
+  "oficial": {
+    "dem_nodes": 12067692,
+    "dem_dem_edges": 108567520,
+    "grid": [
+      3354,
+      3598
+    ]
+  },
+  "execucao": {
+    "returncode": 0,
+    "tempo_total_s": 184.1,
+    "tempo_total_min": 3.1,
+    "pico_rss_gb_amostrado_2s": 42.36,
+    "maquina": "128 GB RAM; python 3.11.9; execucao CPU (torch 2.9.1+cpu)",
+    "log_final": [
+      "  import torch_geometric.typing",
+      "C:\\Users\\DomP3dr0\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_geometric\\__init__.py:4: UserWarning: An issue occurred while importing 'torch-cluster'. Disabling its usage. Stacktrace: Could not load this library: C:\\Users\\DomP3dr0\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_cluster\\_version_cpu.pyd",
+      "  import torch_geometric.typing",
+      "C:\\Users\\DomP3dr0\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_geometric\\__init__.py:4: UserWarning: An issue occurred while importing 'torch-spline-conv'. Disabling its usage. Stacktrace: Could not load this library: C:\\Users\\DomP3dr0\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_spline_conv\\_version_cpu.pyd",
+      "  import torch_geometric.typing",
+      "C:\\Users\\DomP3dr0\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_geometric\\__init__.py:4: UserWarning: An issue occurred while importing 'torch-sparse'. Disabling its usage. Stacktrace: Could not load this library: C:\\Users\\DomP3dr0\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_sparse\\_version_cpu.pyd",
+      "  import torch_geometric.typing",
+      "[15:11:04] === GERADOR DE GRAFO - OPERA��O SERRA NEGRA ==="
+    ]
+  },
+  "validacao": {
+    "arquivo_gerado_gb": 9.53,
+    "dem_nodes_rebuild": 12067692,
+    "dem_nodes_oficial": 12067692,
+    "dem_nodes_match": true,
+    "dem_dem_edges_rebuild": 96499828,
+    "dem_dem_edges_oficial": 108567520,
+    "dem_dem_edges_match": false,
+    "grid_rebuild": [
+      3598,
+      3354
+    ],
+    "grid_match": true,
+    "sentinel_nodes_rebuild": 108609228,
+    "nota": "rebuild NAO inclui labels/masks/embeddings/lidar reais (adicionados por etapas posteriores do pipeline); a validacao cobre estrutura do grafo (nos/arestas/grid)"
+  },
+  "limpeza": "diretorio temporario deletado (inclusive o grafo reconstruido)"
+}

@@ -1,0 +1,10 @@
+fig_manuscrito_V2;arquivo;script_gerador;dados_de_entrada;run_de_origem
+Fig. 1 (study area);fig01_study_area.png (22,6 MB @600dpi);figs/fig01_study_area.py (copia de artigo_Defence_Technology/fig/);pacaraima_dem_consolidated_q1q4.tif + pacaraima_s2_10m_real_q1q4_patched.tif + geojsons NE;dados brutos (nao depende de run)
+Fig. 2 (pipeline);fig02_pipeline.png;figs/fig02_pipeline.py;diagrama (sem dados);n/a
+Fig. 3 (architecture);fig03_architecture.png;figs/fig03_architecture.py;diagrama (sem dados);n/a
+Fig. 4 (fidelidade: F1 por classe + celulas isoladas);fig06_performance.png;figs/fig06_performance.py;metrics.json (F1 por classe derivado das matrizes de confusao) + 10_incerteza_results.json (D09 coerencia espacial);metrics: run 2026-05-24
+Fig. 5 (comparacao cartografica 1:50.000);fig04a_terrain.png + fig04b_dismounted.png + fig04c_armored.png + fig04d_motorized.png;figs/fig04_comparative.py;GeoTIFFs restricao_*_movement_gnn_v2_fix.tif (RUN FINAL) + baselines + Sentinel-2;run 2026-05-24 (GeoTIFFs _v2_fix)
+Fig. 6 (Transition Zone armoured, paineis A-E);fig05_intelligence_gap.png;figs/fig05_intelligence_gap.py;probs_full.npz (FORCADO para run final) + restricao_blindada_movement_gnn_v2_fix.tif + DEM + features NDVI/slope;run 2026-05-24 - P85 medido = 0.440 (coincide com Results_Master TZ_Final_Run 0.4402)
+Fig. 7 (entropia vs covariaveis, hexbin);fig_correlation.png;figs/fig_correlation.py (copia de NATO .../fig/);probs_full.npz (FORCADO para run final) + features NDVI/slope; amostra 500k seed 42
+(extra) fig07 asymmetric error;fig07_asymmetric_error.png;figs/fig07_asymmetric_error.py;10_incerteza_results.json (D14);analise de 05/04 2026-04-05
+(v2 12/07 - rodada 2 de correcoes do autor);fig01/fig02/fig05/fig_spatial_split_map;figs/*.py + entregaveis/build_fig_spatial_split_v2.py;idem v1;idem v1

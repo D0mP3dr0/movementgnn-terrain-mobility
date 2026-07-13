@@ -1,0 +1,13 @@
+# Versoes pinadas do ambiente de treino real (capturadas em 2026-07-12; freeze integral
+# de 220 pacotes em requirements_freeze_full.txt). Treino: CUDA 12.8 / RTX 5070 Ti.
+torch==2.10.0
+pyg-nightly==2.8.0.dev20260214
+numpy==2.4.6
+pandas==3.0.0
+scikit-learn==1.8.0
+scipy==1.17.0
+rasterio==1.4.4
+matplotlib==3.10.8
+torchmetrics==1.8.2
+pillow==12.1.1
+# opcional (leitura das planilhas .xlsx): openpyxl — nao consta do freeze de treino
