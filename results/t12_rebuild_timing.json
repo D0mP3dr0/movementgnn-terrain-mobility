@@ -1,0 +1,50 @@
+{
+  "protocol": "temporary rebuild, measured and then deleted (T-12)",
+  "inputs": {
+    "dem": "${MOVEMENTGNN_DATA_ROOT}\\GNN_RESTRICAO_MOVIMENTO\\data_raw\\satelites_raw\\dem\\pacaraima_dem_consolidated_q1q4.tif",
+    "sentinel2": "${MOVEMENTGNN_DATA_ROOT}\\GNN_RESTRICAO_MOVIMENTO\\data_raw\\satelites_raw\\sentinel2\\pacaraima\\pacaraima_s2_10m_real_q1q4.tif"
+  },
+  "builder_script": "${MOVEMENTGNN_DATA_ROOT}\\colab_geoint_restricao_mov\\2-data_processed\\generate_graph.py",
+  "official": {
+    "dem_nodes": 12067692,
+    "dem_dem_edges": 108567520,
+    "grid": [
+      3354,
+      3598
+    ]
+  },
+  "execution": {
+    "returncode": 0,
+    "total_time_s": 184.1,
+    "total_time_min": 3.1,
+    "peak_rss_gb_sampled_2s": 42.36,
+    "machine": "128 GB RAM; python 3.11.9; CPU execution (torch 2.9.1+cpu)",
+    "final_log": [
+      "  import torch_geometric.typing",
+      "${USER_HOME}\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_geometric\\__init__.py:4: UserWarning: An issue occurred while importing 'torch-cluster'. Disabling its usage. Stacktrace: Could not load this library: ${USER_HOME}\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_cluster\\_version_cpu.pyd",
+      "  import torch_geometric.typing",
+      "${USER_HOME}\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_geometric\\__init__.py:4: UserWarning: An issue occurred while importing 'torch-spline-conv'. Disabling its usage. Stacktrace: Could not load this library: ${USER_HOME}\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_spline_conv\\_version_cpu.pyd",
+      "  import torch_geometric.typing",
+      "${USER_HOME}\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_geometric\\__init__.py:4: UserWarning: An issue occurred while importing 'torch-sparse'. Disabling its usage. Stacktrace: Could not load this library: ${USER_HOME}\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch_sparse\\_version_cpu.pyd",
+      "  import torch_geometric.typing",
+      "[15:11:04] === GRAPH GENERATOR - SERRA NEGRA OPERATION ==="
+    ]
+  },
+  "validation": {
+    "generated_file_gb": 9.53,
+    "dem_nodes_rebuild": 12067692,
+    "dem_nodes_official": 12067692,
+    "dem_nodes_match": true,
+    "dem_dem_edges_rebuild": 96499828,
+    "dem_dem_edges_official": 108567520,
+    "dem_dem_edges_match": false,
+    "grid_rebuild": [
+      3598,
+      3354
+    ],
+    "grid_match": true,
+    "sentinel_nodes_rebuild": 108609228,
+    "note": "the rebuild does NOT include the real labels/masks/embeddings/lidar (added by later pipeline stages); the check covers the graph structure (nodes/edges/grid)"
+  },
+  "cleanup": "temporary directory deleted (including the rebuilt graph)"
+}

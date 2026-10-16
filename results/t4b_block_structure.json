@@ -1,0 +1,26 @@
+{
+ "date": "2026-07-12",
+ "vertical_boundaries": {
+  "n": 20,
+  "spacings_cells": [
+   162,
+   163
+  ]
+ },
+ "horizontal_boundaries": {
+  "n": 22,
+  "spacings_cells": [
+   162,
+   163
+  ],
+  "first_band_offset_rows": 30
+ },
+ "block_size": "162-163 cells x 30 m = 4.86-4.89 km (~5 km on a degree grid)",
+ "n_blocks": 483,
+ "purity": 1.0,
+ "blocks_per_partition": {
+  "train": 338,
+  "val": 72,
+  "test": 73
+ }
+}

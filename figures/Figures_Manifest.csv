@@ -1,0 +1,10 @@
+manuscript_figure_V2;file;generating_script;input_data;source_run
+Fig. 1 (study area);fig01_study_area.png (22,6 MB @600dpi, archived on Zenodo, not in this repository);figures/fig01_study_area.py (copied from an earlier figure script);pacaraima_dem_consolidated_q1q4.tif + pacaraima_s2_10m_real_q1q4_patched.tif + Natural Earth geojsons;raw data (does not depend on a run)
+Fig. 2 (pipeline);fig02_pipeline.png;figures/fig02_pipeline.py;diagram (no data);n/a
+Fig. 3 (architecture);fig03_architecture.png;figures/fig03_architecture.py;diagram (no data);n/a
+Fig. 4 (fidelity: F1 per class + isolated cells);fig06_performance.png;figures/fig06_performance.py;metrics.json (F1 per class derived from the confusion matrices) + 10_incerteza_results.json (D09 spatial coherence);metrics: run 2026-05-24
+Fig. 5 (cartographic comparison 1:50.000);fig04a_terrain.png + fig04b_dismounted.png + fig04c_armored.png + fig04d_motorized.png;figures/fig04_comparative.py;GeoTIFFs restricao_*_movement_gnn_v2_fix.tif (FINAL RUN) + baselines + Sentinel-2;run 2026-05-24 (GeoTIFFs _v2_fix)
+Fig. 6 (Transition Zone armoured, panels A-E);fig05_intelligence_gap.png;figures/fig05_intelligence_gap.py;probs_full.npz (forced to the final run) + restricao_blindada_movement_gnn_v2_fix.tif + DEM + NDVI/slope features;run 2026-05-24 - measured P85 = 0.440 (matches Results_Master TZ_Final_Run 0.4402)
+Fig. 7 (entropy vs covariates, hexbin);fig_correlation.png;figures/fig_correlation.py (copied from an earlier figure script);probs_full.npz (forced to the final run) + NDVI/slope features; sample 500k seed 42
+(extra) fig07 asymmetric error;fig07_asymmetric_error.png;figures/fig07_asymmetric_error.py;10_incerteza_results.json (D14);analysis of 05/04 2026-04-05
+(v2 12/07 - figure update 2);fig01/fig02/fig05/fig_spatial_split_map;figures/*.py + figures/build_fig_spatial_split_v2.py;idem v1;idem v1

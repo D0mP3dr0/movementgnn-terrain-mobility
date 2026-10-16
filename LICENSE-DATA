@@ -1,0 +1,15 @@
+Data, records and documents of movementgnn-terrain-mobility
+
+The files under data/, docs/, results/, figures/preview/ and supplementary/ are licensed
+under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Copyright (c) 2026 Luis Felipe Comodo Seelig, Eduardo Xavier Ferreira Glaser Migon,
+Diego Moura de Oliveira Silva and Leonardo da Silva Lima.
+
+You are free to share and adapt this material for any purpose, including commercially,
+provided that you give appropriate credit, provide a link to the license and indicate if
+changes were made. Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The source code and the trained weights (models/) are licensed under the MIT License in
+LICENSE. The raw Copernicus DEM GLO-30 and Sentinel-2 L2A inputs are not redistributed here
+and remain under their own terms.
